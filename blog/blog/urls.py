@@ -15,10 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.authtoken import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('api.urls')),
+
     # a Log in button to the browsable API 
     path('api-auth/', include('rest_framework.urls')),
+
+    # register and token auth
+    path('api-token-auth', views.obtain_auth_token)
 ]
