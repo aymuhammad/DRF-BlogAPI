@@ -5,6 +5,16 @@ from django.db import models
 
 # model that inherits from Django’s Model class and define its fields
 class Post(models.Model):
+
+    #adding categories for the post
+    Category=(
+        ('Web-Dev', 'Web-Dev'),
+        ('Machine Leanring', 'Machine Learning'),
+        ('Artificial Intelegent', 'Artificial Intelegent'),
+        ('Cyber-Security', 'Cyber-Security')
+    )
+
+    category = models.CharField(max_length=160, null=True, choices=Category, default='Wev-Devs')
     created = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100, blank=True, default="")
     body = models.TextField(blank=True, default="")
