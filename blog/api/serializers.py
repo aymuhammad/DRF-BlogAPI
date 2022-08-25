@@ -1,24 +1,23 @@
+import email
+import turtle
 from csv import field_size_limit
 from dataclasses import fields
 from distutils.file_util import write_file
-import email
 from importlib.metadata import requires
-from pyexpat import model
 from statistics import mode
-import turtle
 from wsgiref import validate
 from wsgiref.validate import validator
-from rest_framework import serializers
-
-# registration details
-from rest_framework import status
-from rest_framework.validators import UniqueValidator
-from django.contrib.auth.password_validation import validate_password
 
 # users are created from the User model defined in django.contrib.auth
 from django.contrib.auth.models import User
-from . models import Post
-from .models import Comment
+from django.contrib.auth.password_validation import validate_password
+from pyexpat import model
+# registration details
+from rest_framework import serializers, status
+from rest_framework.validators import UniqueValidator
+
+from .models import Comment, Post
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
