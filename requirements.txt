@@ -3,3 +3,7 @@ djangorestframework
 requests
 django-cors-headers
 pyyaml
+
+# for testing purpose
+coverage==3.6
+pytest
