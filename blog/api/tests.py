@@ -28,3 +28,10 @@ class RegistrationTestCase(APITestCase):
     def test_logout(APITestCase):
         Client = APIClient()
         Client.logout()
+
+class PostTestCase(TestCase):
+    def test_Post(self):
+        Client = TestCase()
+        Client.data = {"category": "Web-Devs", "created":"time.now", "title": "GoodJob", "body":"Hello World", "owner":"auwal"}
+        response = TestCase("localhost/posts/add/", Client.data)
+        TestCase.assertEqual(response.status_code, status.HTTP_201_CREATED)
