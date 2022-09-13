@@ -14,7 +14,7 @@ class Post(models.Model):
         ('Cyber-Security', 'Cyber-Security')
     )
 
-    category = models.CharField(max_length=160, null=True, choices=Category, default='Wev-Devs')
+    category = models.CharField(max_length=160, null=True, choices=Category, default='Web-Devs')
     created = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100, blank=True, default="")
     body = models.TextField(blank=True, default="")
