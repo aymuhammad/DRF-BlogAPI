@@ -17,7 +17,7 @@ class RegistrationTestCase(APITestCase):
         Client = APITestCase()
         data = {"username":"testcase", "email":"test@localhost.app", "password":"some_strong_psw", "password2":"some_strong_psw"}
         response = self.client.get("/api-auth/resgister/", data)
-        # self.assertEquals(response.status_code, status.HTTP_201_CREATED)
+        self.assertEquals(response.status_code, 200)
 
     def  test_login(APITestCase):
         Client = APIClient()
